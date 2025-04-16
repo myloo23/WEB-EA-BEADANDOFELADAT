@@ -17,7 +17,7 @@ body {
     align-items: center;
 }
 
-/* Fejléc */
+/* === Fejléc === */
 header {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px 20px;
@@ -35,7 +35,7 @@ header {
     text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
 }
 
-/*  Menü (Középre igazítva) */
+/* === Menü (Középre igazítva) === */
 nav {
     width: 100%;
     display: flex;
@@ -74,7 +74,7 @@ nav ul li i {
     margin-right: 8px;
 }
 
-/*  Tartalom Blokk (Középre igazítva minden oldalon)  */
+/* === Tartalom Blokk (Középre igazítva minden oldalon) === */
 #content {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -94,7 +94,7 @@ nav ul li i {
     transform: scale(1.02);
 }
 
-/*  Funkciók és Technológiák (Középre igazítva) */
+/* === Funkciók és Technológiák (Középre igazítva) === */
 .features {
     display: flex;
     justify-content: center;
@@ -158,7 +158,52 @@ tr:hover {
     transition: 0.2s ease-in-out;
 }
 
-/*  Lábazat (Minden középre igazítva)  */
+/* === CRUD Gombok (Középre igazítva) === */
+button {
+    background: linear-gradient(45deg, #06b6d4, #0284c7);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0284c7, #06b6d4);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+/* === OOJS Kártyák (Középre igazítva) === */
+.oojs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.oojs-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.oojs-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* === Lábazat (Minden középre igazítva) === */
 footer {
     margin-top: 40px;
     padding: 15px;
