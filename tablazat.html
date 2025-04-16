@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Táblázat</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="tablazat.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1 class="neon-text">Web-programozás-1</h1>
+        <p class="sub-heading">Modern fejlesztési technológiák</p>
+    </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li class="active"><a href="tablazat.html">Táblázat</a></li>
+        <li><a href="html5.html">HTML5 API-k</a></li>
+        <li><a href="chart.html">Chart.js</a></li>
+        <li><a href="ajax.html">AJAX</a></li>
+        <li><a href="oojs.html">OOJS</a></li>
+    </ul>
+</nav>
+
+<section id="content">
+    <h2>Táblázat kezelése (CRUD)</h2>
+    
+    <input type="text" id="search" placeholder="Keresés..." onkeyup="filterTable()">
+    
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Név</th>
+                <th onclick="sortTable(1)">Kor</th>
+                <th onclick="sortTable(2)">Város</th>
+                <th onclick="sortTable(3)">E-mail</th>
+                <th>Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JS tölti fel a tartalmat -->
+        </tbody>
+    </table>
+
+    <h3>Új bejegyzés hozzáadása</h3>
+    <input type="text" id="name" placeholder="Név">
+    <input type="number" id="age" placeholder="Kor">
+    <input type="text" id="city" placeholder="Város">
+    <input type="email" id="email" placeholder="E-mail">
+    <button onclick="addEntry()">Hozzáadás</button>
+</section>
+
+<footer>
+    <p>Készítette: <strong>[Takács Milán]</strong> - Neptun kód: <strong>[KWKABN]</strong></p>
+    <p>Készítette: <strong>[Türi Krisztián Jenő]</strong> - Neptun kód: <strong>[NLI24V]</strong></p>
+</footer>
+
+</body>
+</html>

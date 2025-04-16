@@ -125,6 +125,38 @@ nav ul li i {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
+/* === Táblázatok (Középre igazítva) === */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+td {
+    transition: 0.3s;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+    transition: 0.2s ease-in-out;
+}
 
 /*  Lábazat (Minden középre igazítva)  */
 footer {
