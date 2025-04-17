@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>React feladat</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,17 +36,20 @@
     }
     .board {
       display: grid;
-      grid-template-columns: repeat(3, 80px);
-      gap: 5px;
+      grid-template-columns: repeat(3, 200px);
+      gap: 10px;
       margin-top: 20px;
+      background-color: #ccc;
+      color: black;
+      
     }
     .square {
-      width: 80px;
-      height: 80px;
-      font-size: 2em;
+      width: 200px;
+      height: 200px;
+      font-size: 10em;
       text-align: center;
       vertical-align: middle;
-      line-height: 80px;
+      line-height: 200px;
       border: 1px solid #333;
       cursor: pointer;
     }
@@ -62,6 +68,7 @@
       text-align: right;
       padding-right: 10px;
       box-sizing: border-box;
+      color: black;
     }
     .calculator-buttons {
       display: grid;
@@ -83,6 +90,21 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="neon-text">Web-programozás-1 Előadás Házi feladat</h1>
+    <p class="sub-heading">Modern fejlesztési technológiák</p>
+</header>
+  <nav>
+    <ul>
+        <li ><a href="index.html" ><i class="fas fa-home"></i> Főoldal</a></li>
+        <li ><a href="tablazat.html"><i class="fas fa-table"></i> Táblázat</a></li>
+        <li><a href="html5.html"><i class="fas fa-code"></i> HTML5 API-k</a></li>
+        <li ><a href="chart.html"><i class="fas fa-chart-line"></i> Chart.js</a></li>
+        <li ><a href="ajax.html"><i class="fas fa-sync"></i> AJAX</a></li>
+        <li ><a href="oojs.html"><i class="fas fa-cogs"></i> OOJS</a></li>
+        <li ><a href="react.html" class="active"><i class="fas fa-sync"></i> REACT</a></li>
+    </ul>
+</nav>
   <nav>
     <button onclick="setView('counter')">Számláló</button>
     <button onclick="setView('mirror')">Szövegfordító</button>
@@ -220,5 +242,9 @@
 
     setView('counter');
   </script>
+  <footer>
+    <p>Készítette: <strong>[Takács Milán]</strong> - Neptun kód: <strong>[KWKABN]</strong></p>
+        <p>Készítette: <strong>[Türi Krisztián Jenő]</strong> - Neptun kód: <strong>[NLI24V]</strong></p>
+</footer>
 </body>
 </html>

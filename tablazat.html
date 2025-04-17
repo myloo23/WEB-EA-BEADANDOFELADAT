@@ -6,6 +6,8 @@
     <title>Táblázat</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="tablazat.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
@@ -16,43 +18,85 @@
 
 <nav>
     <ul>
-        <li><a href="index.html">Főoldal</a></li>
-        <li class="active"><a href="tablazat.html">Táblázat</a></li>
-        <li><a href="html5.html">HTML5 API-k</a></li>
-        <li><a href="chart.html">Chart.js</a></li>
-        <li><a href="ajax.html">AJAX</a></li>
-        <li><a href="oojs.html">OOJS</a></li>
+        <li ><a href="index.html" ><i class="fas fa-home"></i> Főoldal</a></li>
+        <li ><a href="tablazat.html" class="active"><i class="fas fa-table"></i> Táblázat</a></li>
+        <li><a href="html5.html"><i class="fas fa-code"></i> HTML5 API-k</a></li>
+        <li ><a href="chart.html"><i class="fas fa-chart-line"></i> Chart.js</a></li>
+        <li ><a href="ajax.html"><i class="fas fa-sync"></i> AJAX</a></li>
+        <li ><a href="oojs.html"><i class="fas fa-cogs"></i> OOJS</a></li>
+        <li ><a href="react.html"><i class="fas fa-sync"></i> REACT</a></li>
     </ul>
 </nav>
 
 <section id="content">
     <h2>Táblázat kezelése (CRUD)</h2>
     
-    <input type="text" id="search" placeholder="Keresés..." onkeyup="filterTable()">
     
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th onclick="sortTable(0)">Név</th>
-                <th onclick="sortTable(1)">Kor</th>
-                <th onclick="sortTable(2)">Város</th>
-                <th onclick="sortTable(3)">E-mail</th>
-                <th>Műveletek</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- JS tölti fel a tartalmat -->
-        </tbody>
-    </table>
+   
+    <!-- Űrlap új elem létrehozásához/módosításhoz -->
+    <div class="form-section">
+        <h2 id="formTitle">Új elem hozzáadása</h2>
+        <form id="dataForm">
+            <input type="hidden" id="editId">
+           
+            <div class="form-group">
+                <label for="name">Név*</label>
+                <input type="text" id="name" required minlength="2" maxlength="50">
+                <div class="error-message" id="nameError"></div>
+            </div>
+           
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+           
+            <div class="form-group">
+                <label for="age">Életkor*</label>
+                <input type="number" id="age" required min="18" max="120">
+                <div class="error-message" id="ageError"></div>
+            </div>
+           
+            <div class="form-group">
+                <label for="status">Státusz</label>
+                <select id="status">
+                    <option value="Aktív">Aktív</option>
+                    <option value="Inaktív">Inaktív</option>
+                    <option value="Felfüggesztve">Felfüggesztve</option>
+                </select>
+            </div>
+           
+            <button type="submit" id="submitBtn">Mentés</button>
+            <button type="button" id="cancelBtn">Mégse</button>
+        </form>
+    </div>
 
-    <h3>Új bejegyzés hozzáadása</h3>
-    <input type="text" id="name" placeholder="Név">
-    <input type="number" id="age" placeholder="Kor">
-    <input type="text" id="city" placeholder="Város">
-    <input type="email" id="email" placeholder="E-mail">
-    <button onclick="addEntry()">Hozzáadás</button>
-</section>
+    <div class="filter-section">
+        <input type="text" id="searchInput" placeholder="Keresés az összes oszlopban...">
+        <button id="searchBtn">Keresés</button>
+        <button id="resetBtn">Szűrők törlése</button>
+    </div>
+   
+    <!-- Táblázat -->
+    <div class="table-section">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th data-column="name" class="sortable">Név <span class="sort-icon">↑↓</span></th>
+                    <th data-column="email" class="sortable">Email <span class="sort-icon">↑↓</span></th>
+                    <th data-column="age" class="sortable">Életkor <span class="sort-icon">↑↓</span></th>
+                    <th data-column="status" class="sortable">Státusz <span class="sort-icon">↑↓</span></th>
+                    <th>Műveletek</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- JavaScript fogja feltölteni -->
+            </tbody>
+        </table>
+    </div>
+</div>
 
+<script src="table.js"></script>
 <footer>
     <p>Készítette: <strong>[Takács Milán]</strong> - Neptun kód: <strong>[KWKABN]</strong></p>
     <p>Készítette: <strong>[Türi Krisztián Jenő]</strong> - Neptun kód: <strong>[NLI24V]</strong></p>
